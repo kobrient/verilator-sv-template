@@ -13,7 +13,7 @@ Useful files
 Pre-reqs
 --------
 
-You should install verilator, at minimum.  You also probably want gtkwave.
+You should install verilator, at minimum.  You also probably want surfer or gtkwave. Surfer is available on Homebrew. Depending on platform, gtkwave might be available as package, flatpack, or build from source.
 
 Commands
 --------
@@ -21,6 +21,7 @@ Commands
 Useful commands defined as make targets:
 
 - `make Vtop` to compile
-- `make run` to run your simulator
+- `make run` to run simulator
 - `make gtkwave` to launch gtkwave
+- `make surfer` to launch surfer
 
