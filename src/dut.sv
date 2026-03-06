@@ -9,10 +9,10 @@
 ////////////////////////////////////////
 
 `include "macros.svh"
-`include "genlib.svh"
+`include "gen_funcs.pkg"
 
 module dut
-    import genlib::find_first_funcs;
+    import gen_funcs::*;
 (
     input logic ck,
     input logic rst
@@ -41,7 +41,7 @@ logic[15:0] foobar;
 `DFF(foobar, counter, ckqtr)
 
 logic[15:0] ff;
-assign ff = find_first_funcs#(.WIDTH(16))::find_first1(foobar);
+assign ff = gen_funcs#(.IWIDTH(16))::find_first1(foobar);
 
 ////////////////////////////////////////
 // SVAs ////////////////////////////////

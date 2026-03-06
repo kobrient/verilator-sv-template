@@ -10,7 +10,7 @@
 #include "Vtop.h"
 #include "Vtop___024root.h"
 
-#define MAX_SIM_TIME 50000
+#define MAX_SIM_TIME 100000
 vluint64_t sim_time=0;
 
 double sc_time_stamp() {
@@ -32,12 +32,12 @@ int main(int argc, char** argv, char** env) {
     m_trace->open("waves.vcd");
 #endif
 
-    dut->rst = 1;
+    dut->reset = 1;
 
     while (sim_time < MAX_SIM_TIME && !Verilated::gotFinish()) {
-        dut->ck ^= 1;
+        dut->clk ^= 1;
         if (sim_time == 20) {
-            dut->rst = 0;
+            dut->reset = 0;
         }
 
         dut->eval();
